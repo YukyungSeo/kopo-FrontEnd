@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <!-- 필수 입력 항목 체크 -->
+        <label for="phone">phone :</label>
+        <input id="phone" name="phone" type="text" autofocus required>
+
+        <!-- 필수 입력 항목 체크 -->
+        <label for="email">Email :</label>
+        <input id="email" name="email" type="email" required>
+        
+        <!-- 미리 글자 입력하기 -->
+        <label for="postNum">Post No :</label>
+        <input name="postNum" type="text" placeholder="000-0000-0000"><br>
+
+        <!-- 날짜 가져오기 -->
+        <input type="date">
+
+        <!-- 날짜 시간 가져오기 -->
+        <input type="datetime-local">
+
+        <!-- 월 가져오기 -->
+        <input type="month">
+        
+        <!-- 주 가져오기 -->
+        <input type="week">
+
+        <!-- color 가져오기 -->
+        <input type="color">
+
+        <button type="submit">전송하기</button>
+    </form>
+</body>
+</html>

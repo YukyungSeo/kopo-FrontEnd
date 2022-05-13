@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        1.  주석처리 : 코딩에 영향을 주지 않는다
+                어떤 내용이나 기능에 대해 설명하는 역할
+        2.  html, css, javaScript 이해
+            html : 맨얼굴(민낯)
+            css(cascading style sheet) : 화장(makup)
+            javaScript : 동적으로 데이터나 DOM을 처리하는 녀석
+
+        3.  DOM(Document Object Model)
+            문서 객체 모델
+            검색엔진(SEO)에 잘 적용되기 위해서 만들어진 문서
+            문서 자체가 트리 구조를 가지고 구현되어 있고, 
+            그 문서만의 의미(semantic)가 있게 구성을 하게 된다.
+
+        4.  html의 동작
+            liteserver를 동작시키지 않아도
+            그냥 html 파일을 더블클릭하면 동작이 된다.
+
+        5.  dom구조의 기본
+            document : 전체 화면
+            html - head, body
+
+        6.  웹동작 원리
+                frontend : html/css/javascript UI
+                backend : UI 없음, data + logic
+                index.jsp -> httpd -> servlet -> java bean -> DB
+     -->
+
+     <!-- 
+        10. CSS
+            html의 화면을 이쁘게 만들어주는 역할
+            css3은 2d or 3d도 만들 수 있다.
+            css3는 animation도 가능하다.
+            정해진 tag나 class에 스타일을 입힐 때 사용한다.
+     -->
+     <style>
+         span {
+             color: #e040fb;
+         }
+     </style>
+</head>
+<body>
+    <!-- 단락을 만들 때 사용하는 테그 -->
+    <p>안녕~~ 오늘 좋은 아침이야~~</p>
+    <p>안녕~~ 오늘 좋은 아침이야~~</p>
+
+    <!-- br은 리턴해서 한문장 아래로 -->
+    안녕~~ 오늘 좋은 아침이야~~<br>
+    안녕~~ 오늘 좋은 아침이야~~<br>
+    안녕~~ 오늘 좋은 아침이야~~<br>
+
+    <!-- 글씨 크기에 따라서 적용하는 h 테그 -->
+    <h1>배고파 밥먹으러 가고시퍼</h1>
+    <h2>배고파 밥먹으러 가고시퍼</h2>
+    <h3>배고파 밥먹으러 가고시퍼</h3>
+    <h4>배고파 밥먹으러 가고시퍼</h4>
+    <h5>배고파 밥먹으러 가고시퍼</h5>
+    <h6>배고파 밥먹으러 가고시퍼</h6>
+
+    <!-- 
+        7. element
+            start tag + content + end tag
+    -->
+    <h5>배고파 밥먹으러 가고시퍼</h5>
+
+    <!-- 
+        8. div 태그 
+            html이나 javascript에서 가장 많이 사용하는 태그
+            span 태그도 사용되지만 span은 span 태그 안에 span을 사용하면 적용이 안된다.
+            형태를 가로 X 세로 의 형태로 사용된다.
+     -->
+    <div>가장 많이 사용하는 태그</div>
+    
+    <!-- 
+        9. span 태그 
+            필요할 때 그 부분만 적용할 때 사용하는 태그
+            contents에 집중하고 싶을 때 사용
+    -->
+    <span>필요할 때 그 부분만 적용할 때 사용하는 태그</span>
+</body>
+</html>
+
+
+
+
+

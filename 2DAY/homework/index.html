@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2DAY HOMEWORK 이력서 작성 페이지</title>
+</head>
+<body>
+    <!-- h1 태그를 사용하여 현재 페이지 제목 작성 -->
+    <h1>이력서</h1>
+    <form action="" method="get">
+        <ul>
+            <!-- 
+                ul과 li 태그를 사용하여 개인정보, 학력사항, 수상, 사이트 목록을 작성
+                실제 사항이 작성될 table도 삽입
+            -->
+            <li>개인 정보</li>
+            <!-- 
+                table 태그를 사용하여 간격 정리 
+                tr은 행을 구분해주는 태그
+                td은 해당 행에 들어갈 값을 열의 순차에 맞게 작성할 수 있는 태그
+            -->
+            <table>
+                <tr>
+                    <!-- 이미지 업로드 -->
+                    <!-- 
+                        (5, 2) 형식의 테이블을 만들고,
+                        1열의 행을 모두 병합한 위치에 이미지를 업로드
+                        rowspan="5"은 해당 칸은 아래 5행을 병합한 칸이라는 것을 의미
+                     -->
+                    <td rowspan="5">
+                        <!-- 
+                            img 태그를 사용하여 이미지 업로드 
+                            src는 이미지의 위치와 이름을 작성, 위치가 없을 경우 같은 폴더
+                            alt는 해당 이미지가 업로지 되지 않을 경우 대체되는 텍스트
+                            width는 가로 길이를 조절, 세로는 옵션을 넣지 않을 경우 가로에 맞춰져서 자동 조절
+                        -->
+                        <img src="profile_img.jpg" alt="사진" width="200"><br>
+                        <!-- 
+                            input type="file" 을 사용하여 이미지 제출버튼 생성 
+                            accept는 로드할 수 있는 파일 형식 지정
+                            onchange는 이미지를 업로드할 때 호출할 javascript
+                        -->
+                        <input type="file" id="choose_profile_img" name="choose_profile_img" accept="image/*" onchange="loadFile(this)">
+                    </td>
+                    <!-- 
+                        성함 작성 
+                        input type="text" 를 사용하여 이름을 작성할 수 있는 칸 생성
+                        value는 사용자가 입력하기 전 미리 값을 넣어놓을 수 있는 옵션(이하 input의 value의 역할은 동일)
+                        autofocus는 페이지가 사용자에게 로드되었을 때 가장 먼저 커서가 위치하도록 하는 옵션
+                        required는 필수 입력해야하는 사항(이하 input의 required의 역할은 동일)
+                     -->
+                    <th><label for="name">성함</label></th>
+                    <td><input id="name" name="name" type="text" value="임창정" autofocus required></td>
+                </tr>
+                <tr>
+                    <!-- 
+                        생년월일 작성
+                        td와 input type="date" 를 사용하여 생년월일을 작성할 수 있는 칸 생성 
+                        날짜를 미리 입력하고 싶은 경우 년월일을 -로 구분하여 value 옵션으로 작성
+                    -->
+                    <th><label for="birth">생년월일</label></th>
+                    <td><input id="birth" name="birth" type="date" value="1973-11-30" required></td>
+                </tr>
+                <tr>
+                    <!-- 
+                        이메일 작성 
+                        td와 input type="text" 를 사용하여 이메일을 작성할 수 있는 칸 생성
+                    -->
+                    <th><label for="email">이메일</label></th>
+                    <td><input id="email" name="email" type="email" value="imchangjung@gmail.com" required></td>
+                </tr>
+                <tr>
+                    <!-- 
+                        전화번호 작성
+                        td와 input type="text" 를 사용하여 전화번호를 작성할 수 있는 칸 생성
+                    -->
+                    <th><label for="phone">전화번호</label></th>
+                    <td><input id="phone" name="phone" type="text" value="010-1234-1234" required></td>
+                </tr>
+                <tr>
+                    <!-- 
+                        주소 작성
+                        td와 input type="text" 를 사용하여 주소를 작성할 수 있는 칸 생성
+                    -->
+                    <th><label for="addr">주소</label></th>
+                    <td><input id="addr" name="addr" type="text" value="경기도 이천시 백사면 송말리" required></td>
+                </tr>
+            </table><br><br>
+
+            <li>학력사항</li>
+            <table>
+                <tr>
+                    <!-- 학력사항 테이블 header -->
+                    <th>기간</th>
+                    <th>학교명</th>
+                    <th>학과(전공)</th>
+                    <th>상태</th>
+                </tr>
+                <tr>
+                    <!-- 
+                        첫번째 학력 작성
+                        td와 input type="date"를 사용하여 교육 기간을 작성할 수 있는 칸 생성 
+                            - input type="date" 2개를 사용하여 기간의 시작과 끝에 대한 날짜를 입력할 수 있음 (이하 테이블 1열의 역할은 동일)
+                        td와 input type="text"를 사용하여 학교명을 작성할 수 있는 칸 생성(이하 테이블 2열의 역할은 동일)
+                        td와 input type="text"를 사용하여 학과(전공)을 작성할 수 있는 칸 생성(이하 테이블 3열의 역할은 동일)
+                        td와 select를 사용하여 학력 상태을 목록에서 선택할 수 있는 칸 생성(이하 테이블 4열의 역할은 동일)
+                            option은 선택할 수 있는 목록을 작성한 것
+                    -->
+                    <td>
+                        <input id="first_academic_period_start" name="first_academic_period_start" type="date" value="1993-03-02">
+                        ~
+                        <input id="first_academic_period_end" name="first_academic_period_end" type="date" value="2000-02-25">
+                    </td>
+                    <td><input id="first_academic_name" name="first_academic_name" type="text" value="중앙대학교"></td>
+                    <td><input id="first_academic_major" name="first_academic_major" type="text" value="연극학과 연기전공"></td>
+                    <td>
+                        <select name="first_academic_state" id="first_academic_state">
+                            <option value="졸업">졸업</option>
+                            <option value="재학">재학</option>
+                            <option value="휴학">휴학</option>
+                            <option value="자퇴">자퇴</option>
+                            <option value="제적">제적</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- 두번째 학력 작성 -->
+                    <td>
+                        <input id="second_academic_period_start" name="second_academic_period_start" type="date">
+                        ~
+                        <input id="second_academic_period_end" name="second_academic_period_end" type="date">
+                    </td>
+                    <td><input id="second_academic_name" name="second_academic_name" type="text"></td>
+                    <td><input id="second_academic_major" name="second_academic_major" type="text"></td>
+                    <td>
+                        <select name="first_academic_state" id="first_academic_state">
+                            <option value="졸업">졸업</option>
+                            <option value="재학">재학</option>
+                            <option value="휴학">휴학</option>
+                            <option value="자퇴">자퇴</option>
+                            <option value="제적">제적</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <!-- 세번째 학력 작성 -->
+                    <td>
+                        <input id="third_academic_period_start" name="third_academic_period_start" type="date">
+                        ~
+                        <input id="third_academic_period_end" name="third_academic_period_end" type="date">
+                    </td>
+                    <td><input id="third_academic_name" name="third_academic_name" type="text"></td>
+                    <td><input id="third_academic_major" name="third_academic_major" type="text"></td>
+                    <td>
+                        <select name="first_academic_state" id="first_academic_state">
+                            <option value="졸업">졸업</option>
+                            <option value="재학">재학</option>
+                            <option value="휴학">휴학</option>
+                            <option value="자퇴">자퇴</option>
+                            <option value="제적">제적</option>
+                        </select>
+                    </td>
+                </tr>
+            </table><br><br>
+
+            <li>수상</li>
+            <table>
+                <tr>
+                    <!-- 수상 테이블 header -->
+                    <th>날짜</th>
+                    <th>대회명</th>
+                    <th>상장</th>
+                    <th>작품이름</th>
+                </tr>
+                <tr>
+                    <!-- 
+                        첫번째 수상 작성 
+                        td와 input type="month"를 사용하여 상을 수상한 월을 작성할 수 있는 칸 생성 (이하 테이블 1열의 역할은 동일)
+                        td와 input type="text"를 사용하여 대회명을 작성할 수 있는 칸 생성 (이하 테이블 2열의 역할은 동일)
+                        td와 input type="text"를 사용하여 상장을 작성할 수 있는 칸 생성 (이하 테이블 3열의 역할은 동일)
+                        td와 input type="text"를 사용하여 작품명을 작성할 수 있는 칸 생성 (이하 테이블 4열의 역할은 동일)
+                    -->
+                    <td><input id="first_award_date" name="first_award_date" type="month" value="1997-12"></td>
+                    <td><input id="first_award_contest" name="first_award_contest" type="text" value="제35회 대종상"></td>
+                    <td><input id="first_award_dept" name="first_award_dept" type="text" value="남우조연상"></td>
+                    <td><input id="first_award_name" name="first_award_name" type="text" value="비트"></td>
+                </tr>
+                <tr>
+                    <!-- 두번째 수상 작성 -->
+                    <td><input id="second_award_date" name="second_award_date" type="month" value="1998-12"></td>
+                    <td><input id="second_award_contest" name="second_award_contest" type="text" value="제34회 백상예술대상"></td>
+                    <td><input id="second_award_dept" name="second_award_dept" type="text" value="영화부문 남자 신인연기상"></td>
+                    <td><input id="second_award_name" name="second_award_name" type="text" value="비트"></td>
+                </tr>
+                <tr>
+                    <!-- 세번째 수상 작성 -->
+                    <td><input id="thrid_award_date" name="thrid_award_date" type="month" value="2003-12"></td>
+                    <td><input id="thrid_award_contest" name="thrid_award_contest" type="text" value="제39회 백상예술대상"></td>
+                    <td><input id="thrid_award_dept" name="thrid_award_dept" type="text" value="영화부문 갤러리아 인기상"></td>
+                    <td><input id="thrid_award_name" name="thrid_award_name" type="text" value="색즉시공"></td>
+                </tr>
+                <tr>
+                    <!-- 네번째 수상 작성 -->
+                    <td><input id="forth_award_date" name="forth_award_date" type="month" value="2008-12"></td>
+                    <td><input id="forth_award_contest" name="forth_award_contest" type="text" value="제44회 백상예술대상"></td>
+                    <td><input id="forth_award_dept" name="forth_award_dept" type="text" value="영화부문 남자 최우수연기상"></td>
+                    <td><input id="forth_award_name" name="forth_award_name" type="text" value="스카우트"></td>
+                </tr>
+                <tr>
+                    <!-- 다섯번째 수상 작성 -->
+                    <td><input id="fifth_award_date" name="fifth_award_date" type="month" value="2012-12"></td>
+                    <td><input id="fifth_award_contest" name="fifth_award_contest" type="text" value="제20회 대한민국문화연예대상"></td>
+                    <td><input id="fifth_award_dept" name="fifth_award_dept" type="text" value="영화부문 남자 최우수연기상	"></td>
+                    <td><input id="fifth_award_name" name="fifth_award_name" type="text" value="공모자들"></td>
+                </tr>
+            </table><br><br>
+
+            <li>사이트
+                <!-- 
+                    연락을 할 수 있는 사이트 링크 리스트 
+                    href에는 연결할 수 있는 url 작성
+                -->
+                <a href="https://yesiment.com/">공식홈페이지</a>
+                <a href="https://twitter.com/imchangjung73">트위터</a>
+                <a href="https://www.instagram.com/imchangjung3309/">인스타그램</a>
+                <a href="https://www.youtube.com/channel/UCYklS0dalWLBU0aDKaLyuKw">유투브</a>
+            </li>
+        </ul><br><br>
+
+        <!-- 작성한 이력서를 제출(type="submit")할 수 있는 버튼 -->
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>
