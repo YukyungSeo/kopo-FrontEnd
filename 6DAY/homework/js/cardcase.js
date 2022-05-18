@@ -4,7 +4,7 @@ function getRandomNum(maxNum) {
 }
 
 
-function shakeCardcase(){
+function shuffleDeck(){
     // 0~51까지 순서대로의 값을 가진 deck
     let baseDeck = [];
     for (let i = 0; i < 52; i++) {
@@ -20,7 +20,7 @@ function shakeCardcase(){
     
     return cardcase;
 }
-// console.log(shakeCardcase());
+// console.log(shuffleDeck());
 
 // .button이 클릭되면 insertCardcaseHTML 함수 실행
 // document.querySelector(".button").onclick = 
@@ -46,6 +46,7 @@ function insertCardcaseHTML(deck){
         newElement.classList.add("card");
         // 새로운 div에 id 할당
         newElement.id = `${shapeList[shape]}${number}`;
+        
         // 새로운 div에 style로 이미지 삽입
         let str = "background-image: url(./img/";
         if (number == 0) {
