@@ -22,9 +22,9 @@ function shakeCardcase(){
 }
 // console.log(shakeCardcase());
 
-// .button이 클릭되면 insertCardcaseHTML 함수 실행
-// document.querySelector(".button").onclick = 
-function insertCardcaseHTML(deck){
+// .button이 클릭되면
+document.querySelector(".button").onclick = 
+function insertCardcaseHTML(){
     // 모양 이름 리스트
     let shapeList = ["spades", "hearts", "diamonds","clubs"];
 
@@ -33,7 +33,9 @@ function insertCardcaseHTML(deck){
     // 이전에 들어가 있는 자식 div를 삭제함
     container.innerHTML = "";
 
-    // 셔플된 카드들을 하나씩 부모 div에 삽입한다.
+    // 셔플된 카드들을 가져옴
+    const deck = shakeCardcase();
+    // 하나씩 부모 div에 삽입한다.
     deck.forEach(card => {
         // 몫은 모양
         // 나머지는 숫자
@@ -41,13 +43,13 @@ function insertCardcaseHTML(deck){
         let number = card % 13;
 
         // 새로은 자식 div를 생성
-        const newElement = document.createElement("DIV");
+        const newElement = document.createElement("IMG");
         // 새로운 div에 card라는 class를 추가
         newElement.classList.add("card");
         // 새로운 div에 id 할당
         newElement.id = `${shapeList[shape]}${number}`;
         // 새로운 div에 style로 이미지 삽입
-        let str = "background-image: url(./img/";
+        let str = `./img/`;
         if (number == 0) {
             str += `king`;
         } else if (number == 1) {
@@ -59,9 +61,9 @@ function insertCardcaseHTML(deck){
         } else {
             str += `${number}`;
         }
-        str += `_of_${shapeList[shape]}.png);`;
+        str += `_of_${shapeList[shape]}.png`;
         
-        newElement.style = str;
+        newElement.src = str;
 
         // 새로운 div를 부모 div(#deck)에 추가
         container.appendChild(newElement);
