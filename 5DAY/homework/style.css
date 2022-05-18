@@ -1,0 +1,44 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#lotto-list {
+    color: white;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform:translateY(-50%);
+    text-align: center;
+
+    margin: 200px, 0px;
+    padding: 10px;
+    list-style:none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+li {
+    padding: 30px;
+    border: solid 5px white;
+    border-radius: 50%;
+    background-color: rgba( 0, 0, 0, 0.5 );
+    width: 80px;
+    height: 80px;
+    align-items: center;
+}
+
+li:hover {
+    background-color: rgba( 165, 42, 42, 0.8);
+    cursor: pointer;
+}
+
+#main {
+    background: url(background-img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+}
