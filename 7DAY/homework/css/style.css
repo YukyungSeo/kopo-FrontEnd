@@ -1,0 +1,75 @@
+body {
+    background-color: rgb(249, 239, 250);
+}
+h1, #cover-input, #work-list, #clear{
+    /* body에서 X축의 가운데로 이동 */
+    position: relative;
+    width: 50%;
+    left: 50%;
+    transform:translateX(-50%);
+    text-align: center;
+}
+
+#input-work {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+}
+
+#add-work {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(57, 12, 108);
+    color: white;
+    font-size: 20px;
+}
+
+#work-list {
+    margin: 0px;
+    margin-top: 10px;
+    padding: 0px;
+    width: fit-content;
+    height: fit-content;
+}
+
+p {
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    width: 200px;
+    height: 30px;
+}
+
+.workset {
+    margin: 10px;
+    font-size: 25px;
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+}
+
+#clear {
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    color: red;
+    border: none;
+}
+
+#clear:hover {
+    cursor: pointer;
+}
+
+.fa-trash-can {
+    color: red;
+}
+.fa-trash-can:hover {
+    /* 마우스 올라오면 모양 바뀌기 */
+    cursor: pointer;
+}
+
+.fa-check {
+    color: green;
+}
